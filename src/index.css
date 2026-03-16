@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 99%;
+    --foreground: 0 0% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+
+    --primary: 168 42% 32%;
+    --primary-foreground: 30 25% 99%;
+
+    --secondary: 168 24% 88%;
+    --secondary-foreground: 168 42% 32%;
+
+    --muted: 168 14% 94%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 39 48% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 168 14% 82%;
+    --input: 168 14% 82%;
+    --ring: 168 42% 32%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 168 40% 21%;
+    --sidebar-foreground: 30 25% 95%;
+    --sidebar-primary: 39 48% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 168 30% 27%;
+    --sidebar-accent-foreground: 30 25% 95%;
+    --sidebar-border: 168 22% 29%;
+    --sidebar-ring: 39 48% 56%;
+
+    /* Custom tokens */
+    --gold: 39 48% 56%;
+    --gold-foreground: 0 0% 100%;
+    --sage: 168 18% 84%;
+    --sage-light: 168 14% 94%;
+    --forest: 168 42% 32%;
+    --forest-light: 168 34% 40%;
+    --charcoal: 0 0% 18%;
+    --warm-white: 30 25% 99%;
+  }
+
+  .dark {
+    --background: 160 30% 10%;
+    --foreground: 30 25% 95%;
+    --card: 160 24% 14%;
+    --card-foreground: 30 25% 95%;
+    --popover: 160 24% 14%;
+    --popover-foreground: 30 25% 95%;
+    --primary: 168 46% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 168 18% 18%;
+    --secondary-foreground: 30 25% 95%;
+    --muted: 168 14% 15%;
+    --muted-foreground: 108 15% 65%;
+    --accent: 39 48% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 168 12% 22%;
+    --input: 168 12% 22%;
+    --ring: 39 48% 56%;
+    --sidebar-background: 168 26% 8%;
+    --sidebar-foreground: 30 25% 95%;
+    --sidebar-primary: 39 48% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 168 18% 14%;
+    --sidebar-accent-foreground: 30 25% 95%;
+    --sidebar-border: 168 14% 16%;
+    --sidebar-ring: 39 48% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary leading-tight;
+  }
+  .section-subtitle {
+    @apply text-lg md:text-xl text-muted-foreground font-body leading-relaxed max-w-2xl;
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(39 48% 56%), hsl(39 55% 65%));
+  }
+  .forest-gradient {
+    background: linear-gradient(135deg, hsl(168 42% 32%), hsl(168 34% 40%));
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
